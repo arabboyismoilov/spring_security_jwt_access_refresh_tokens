@@ -20,7 +20,7 @@ import java.util.Date;
 public abstract class JwtUtil {
 
     public static String generateAccessToken(User user){
-        long accessTokenExpireTime = 1000 * 30 * 1L; //1 minutes
+        long accessTokenExpireTime = 1000 * 60 * 15L; //15 minutes
         return JWT.create()
                 .withSubject(user.getUsername())
                 .withExpiresAt(new Date(System.currentTimeMillis()+ accessTokenExpireTime))
